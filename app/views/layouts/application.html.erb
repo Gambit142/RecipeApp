@@ -11,6 +11,14 @@
   </head>
 
   <body>
+
+    <header>
+      <%= link_to "Foods", foods_url %>
+      <%= link_to "Recipes", recipes_url %>
+      <%= link_to "Shopping List", shopping_list_url %>
+      <%= link_to "Public Recipes", public_recipes_url %>
+    </header>
+
     <div>
       <% flash.each do |name, msg| -%>
         <%= content_tag :span, msg, class: name %>
