@@ -1,6 +1,5 @@
-<h1>Recipes#index</h1>
-
-<section>
+<main>
+  <h1>Recipes#index</h1>
   <div class="recipes">
     <% @recipes.each do |recipe| %>
       <%= link_to recipe_url(recipe), class: 'recipe' do %>
@@ -12,4 +11,4 @@
       <% end %>
     <% end %>
   </div>
-</section>
+</main>

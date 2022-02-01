@@ -1,2 +1,17 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<main>
+  <h1><%= @recipe.name %></h1>
+  <section class="flex">
+    <div class="flex-column">
+      <p>Preparation time: <%= @recipe.preparation_time %> minutes </p>
+      <p>Cooking time: <%= @recipe.cooking_time %> minutes </p>
+      <p>Steps go here...</p>
+      <button>Generate shopping list</button>
+    </div>
+    <div class="flex-column">
+      <input type="checkbox">
+      <button>Add ingredient</button>
+    </div>
+  </section>
+  <div class="ingredients">
+  </div>
+</main>
