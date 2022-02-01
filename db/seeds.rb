@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+chris = User.create!(name: 'chris', email: 'chris@test.com', password: 'chris123')
+kate = User.create!(name: 'kate', email: 'kate@test.com', password: 'kate123')
+
+rice = chris.foods.create!(name: 'Rice', price: 1.5, measurement_unit: 'kg')
+apple = chris.foods.create!(name: 'Apple', price: 0.2, measurement_unit: 'grams')
+chicken_breasts = chris.foods.create!(name: 'Chicken breasts', price: 3.5, measurement_unit: 'units')
+
+recipe = chris.recipes.create(name: 'Chicken Tandoori', preparation_time: 15, cooking_time: 50, description: 'Chicken', public: true)
+recipe.add_ingredient(rice, 3)
+recipe.add_ingredient(apple, 6)
+
+recipe = kate.recipes.create(name: 'Pizza', preparation_time: 25, cooking_time: 120, description: 'Hawaiian Pizza', public: true)
+flour = chris.foods.create!(name: 'Flour', price: 1.5, measurement_unit: 'kg')
+pineapple = chris.foods.create!(name: 'Pineapple', price: 0.4, measurement_unit: 'units')
+recipe.add_ingredient(flour, 1)
+recipe.add_ingredient(pineapple, 2)
