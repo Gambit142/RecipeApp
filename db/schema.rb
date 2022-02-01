@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2022_02_01_082023) do
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
-    t.string "name"
-    t.string "measurement_unit"
-    t.decimal "price"
+    t.string "name", null: false
+    t.string "measurement_unit", null: false
+    t.decimal "price", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
