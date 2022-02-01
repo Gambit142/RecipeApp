@@ -1,2 +1,16 @@
 <h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+
+<section>
+  <div class="recipes">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe">
+        <div>
+          <h3><%= recipe.name %></h3>
+          <%= link_to 'REMOVE', recipe_url(recipe), method: :delete %>
+        </div>
+        <p><%= recipe.description %></p>
+      </div>
+    <% end %>
+  </div>
+</section>
+
