@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_082023) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.decimal "measurement_unit"
+    t.string "measurement_unit"
     t.decimal "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
