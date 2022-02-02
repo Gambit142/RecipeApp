@@ -9,6 +9,6 @@ class Ability
     can :manage, Inventory, user: user
     return unless user
 
-    can :manage, FoodsRecipe if user # TODO: handle FoodRecipe permissions correctly
+    can :manage, Ingredient if user # TODO: handle Ingredient permissions correctly
   end
 end

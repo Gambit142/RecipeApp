@@ -1,7 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :foods_recipes, dependent: :destroy
-  has_many :foods, through: :foods_recipes
+  has_many :ingredients, dependent: :destroy
+  has_many :foods, through: :ingredients
 
   validates :name, presence: true, length: { maximum: 250 }
   validates :description, presence: true, length: { maximum: 1000 }
@@ -9,7 +9,7 @@ class Recipe < ApplicationRecord
 
   def add_ingredient(food, quantity)
     already_exists = foods.find_by(name: food.name)
-    foods_recipes.create!(food: food, quantity: quantity) unless already_exists
+    ingredients.create!(food: food, quantity: quantity) unless already_exists
   end
 
   def total_food_items
@@ -18,8 +18,8 @@ class Recipe < ApplicationRecord
 
   def total_price
     total = 0
-    foods_recipes.each do |food_recipe|
-      total += food_recipe.food.price * food_recipe.quantity
+    ingredients.each do |ingredient|
+      total += ingredient.food.price * ingredient.quantity
     end
     total
   end

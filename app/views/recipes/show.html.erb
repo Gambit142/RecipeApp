@@ -12,7 +12,7 @@
         <label for="public">Public</label>
         <input name="public" type="checkbox">
       </div>
-      <button>Add ingredient</button>
+      <%# <%= link_to 'Add ingredient', new_ingredient_url() %> %>
     </div>
   </section>
   <div class="ingredients">
@@ -23,14 +23,14 @@
         <th>Value</th>
         <th>Actions</th>
       </tr>
-      <% @recipe.foods_recipes.each do |food_recipe| %>
+      <% @recipe.ingredients.each do |ingredient| %>
         <tr>
-          <td><%= food_recipe.food.name %></td>
-          <td><%= "#{food_recipe.quantity} #{food_recipe.food.measurement_unit}" %></td>
-          <td>$<%= food_recipe.food.price %></td>
+          <td><%= ingredient.food.name %></td>
+          <td><%= "#{ingredient.quantity} #{ingredient.food.measurement_unit}" %></td>
+          <td>$<%= ingredient.food.price %></td>
           <td>
-            <%= link_to 'Modify', edit_foods_recipe_url(food_recipe) %>
-            <%= link_to 'Remove', foods_recipe_url(food_recipe), method: :delete %>
+            <%= link_to 'Modify', edit_ingredient_url(ingredient) %>
+            <%= link_to 'Remove', ingredient_url(ingredient), method: :delete %>
           </td>
         </tr>
       <% end %>

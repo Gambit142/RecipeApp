@@ -1,4 +1,5 @@
-class FoodsRecipe < ApplicationRecord
+class Ingredient < ApplicationRecord
+  self.table_name = 'foods_recipes'
   belongs_to :food
   belongs_to :recipe
 

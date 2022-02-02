@@ -1,5 +1,5 @@
 <section>
-  <%= form_with model: @food_recipe, method: :put do |f| %>
+  <%= form_with model: @ingredient, method: :put do |f| %>
     <%= f.label :quantity %>
     <%= f.number_field :quantity, in: 1..100, step: 1 %>
     <%= f.submit %>

@@ -20,4 +20,7 @@ class RecipesController < ApplicationController
   def public_recipes
     @recipes = Recipe.includes(:user).where(public: true)
   end
+
+  def new_ingredient
+  end
 end
