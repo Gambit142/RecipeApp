@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 2022_02_01_082023) do
     t.index ["inventory_id"], name: "index_foods_inventories_on_inventory_id"
   end
 
-  create_table "foods_recipes", id: false, force: :cascade do |t|
-    t.bigint "recipe_id", null: false
+  create_table "foods_recipes", force: :cascade do |t|
     t.bigint "food_id", null: false
+    t.bigint "recipe_id", null: false
     t.integer "quantity"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_082023) do
   end
 
   add_foreign_key "foods", "users"
+  add_foreign_key "foods_recipes", "foods"
+  add_foreign_key "foods_recipes", "recipes"
   add_foreign_key "inventories", "users"
   add_foreign_key "recipes", "users"
 end
