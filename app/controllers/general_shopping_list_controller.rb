@@ -5,13 +5,7 @@ class GeneralShoppingListController < ApplicationController
     retrieve_missing_items
   end
 
-  # def sum_total_amount
-  #   @total_amount = 0
-  #   missing_items.each |item| do
-  #     @total_amount += ((item[1] - item[0]) * item[3]))
-  #   end
-  #   @total_amount
-  # end
+  private
 
   def retrieve_missing_items
     id = current_user.id
