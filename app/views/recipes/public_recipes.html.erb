@@ -1,2 +1,16 @@
-<h1>Recipes#public_recipes</h1>
-<p>Find me in app/views/recipes/public_recipes.html.erb</p>
+<div class="container">
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe_url(recipe) do %>
+      <div class="recipe-container">
+        <div>
+          <h1><%= recipe.name%></h1>
+          <div>
+            <p>Total food items: <%= recipe.total_food_items %></p>
+            <p>Total price: $<%= recipe.total_price %></p>
+          </div>
+        </div>
+      </div>
+      <h2>By: <%= recipe.user.name %></h2>
+    <% end %>
+  <% end %>
+</div>

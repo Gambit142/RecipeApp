@@ -17,5 +17,7 @@ class RecipesController < ApplicationController
     redirect_to recipes_url
   end
 
-  def public_recipes; end
+  def public_recipes
+    @recipes = Recipe.includes(:user).where(public: true)
+  end
 end
