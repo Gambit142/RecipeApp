@@ -12,7 +12,11 @@
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
       <td><%= food.price %></td>
-      <td><%= link_to 'Delete', food_url(food) %></td>
+      <td><%= link_to 'Delete', food_url(food),
+            method: :delete,
+            data: {confirm: 'Are You Sure You Want to Delete This Food Item'}
+            %>
+      </td>
     </tr>
   <% end %>
 </table>
