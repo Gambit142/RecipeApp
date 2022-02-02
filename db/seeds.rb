@@ -23,8 +23,8 @@ pineapple = kate.foods.create!(name: 'Pineapple', price: 0.4, measurement_unit: 
 recipe.add_ingredient!(flour, 3)
 recipe.add_ingredient!(pineapple, 5)
 
-chris_inventory = Inventory.new(name: 'Chris\'s Fridge')
-kate_inventory = Inventory.new(name: 'Kate\'s Fridge')
+chris_inventory = chris.inventories.create!(name: 'Chris\'s Fridge')
+kate_inventory = kate.inventories.create!(name: 'Kate\'s Fridge')
 
 chris_inventory.foods_inventories.create!(quantity: 2, food: rice)
 chris_inventory.foods_inventories.create!(quantity: 3, food: apple)

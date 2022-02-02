@@ -9,7 +9,11 @@ class Recipe < ApplicationRecord
 
   def add_ingredient!(food, quantity)
     already_exists = foods.find_by(name: food.name)
-    ingredients.create!(food: food, quantity: quantity) unless already_exists
+    if already_exists
+      ingredients.create!(food: already_exists, quantity: quantity) unless already_exists
+    else
+      ingredients.create!(food: food, quantity: quantity) unless already_exists
+    end
   end
 
   def add_ingredient(food, quantity)
