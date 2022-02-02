@@ -5,9 +5,7 @@ class FoodsController < ApplicationController
     @foods = current_user.foods
   end
 
-  def new
-    render :new
-  end
+  def new; end
 
   def create
     new_food = current_user.foods.new(food_params)
