@@ -1,14 +1,16 @@
 <div class="container">
   <% @recipes.each do |recipe| %>
-    <div class="recipe-container">
-      <div>
-        <h1><%= recipe.name%></h1>
+    <%= link_to recipe_url(recipe) do %>
+      <div class="recipe-container">
         <div>
-          <p>Total food items: <%= recipe.get_total_food_items %></p>
-          <p>Total price: $<%= recipe.get_total_price %></p>
+          <h1><%= recipe.name%></h1>
+          <div>
+            <p>Total food items: <%= recipe.get_total_food_items %></p>
+            <p>Total price: $<%= recipe.get_total_price %></p>
+          </div>
         </div>
       </div>
-    </div>
-    <h2>By: <%= recipe.user.name %></h2>
+      <h2>By: <%= recipe.user.name %></h2>
+    <% end %>
   <% end %>
 </div>
