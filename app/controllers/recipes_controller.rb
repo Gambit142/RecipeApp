@@ -21,6 +21,5 @@ class RecipesController < ApplicationController
     @recipes = Recipe.includes(:user).where(public: true)
   end
 
-  def new_ingredient
-  end
+  def new_ingredient; end
 end
