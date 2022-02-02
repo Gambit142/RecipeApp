@@ -1,2 +1,26 @@
-<h1>GeneralShoppingList#index</h1>
-<p>Find me in app/views/general_shopping_list/index.html.erb</p>
+<main>
+  <h1>Shopping List</h1>
+  <div>
+    <span>Amount of food items to buy: <%= @missing_items.size %> </span>
+      <span>
+        Total value of food needed: $
+        <%= @missing_items.reduce(0) { |sum, item| sum + ((item[1] - item[0]) * item[3]) } %>
+      </span>
+  </div>
+  <div>
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price($)</th>
+      </tr>
+      <% @missing_items.each do |item|%>
+        <tr>
+          <td> <%= item[2]%> </td>
+          <td> <%= item[1] - item[0] %> <%= item[4] %></td>
+          <td> <%= (item[1] - item[0]) * item[3] %> </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</main>
