@@ -19,6 +19,15 @@ recipe.add_ingredient!(apple, 6)
 
 recipe = kate.recipes.create(name: 'Pizza', preparation_time: 25, cooking_time: 120, description: 'Classic Hawaiian Pizza combines pizza sauce, cheese, cooked ham, and pineapple. This crowd-pleasing pizza recipe starts with my homemade pizza crust and is finished with a sprinkle of crispy bacon. It’s salty, sweet, cheesy, and undeniably delicious!', public: true)
 flour = chris.foods.create!(name: 'Flour', price: 1.5, measurement_unit: 'kg')
-pineapple = chris.foods.create!(name: 'Pineapple', price: 0.4, measurement_unit: 'units')
-recipe.add_ingredient!(flour, 1)
-recipe.add_ingredient!(pineapple, 2)
+pineapple = kate.foods.create!(name: 'Pineapple', price: 0.4, measurement_unit: 'units')
+recipe.add_ingredient!(flour, 3)
+recipe.add_ingredient!(pineapple, 5)
+
+chris_inventory = Inventory.new(name: 'Chris\'s Fridge')
+kate_inventory = Inventory.new(name: 'Kate\'s Fridge')
+
+chris_inventory.foods_inventories.create!(quantity: 2, food: rice)
+chris_inventory.foods_inventories.create!(quantity: 3, food: apple)
+
+kate_inventory.foods_inventories.create!(quantity: 2, food: flour)
+kate_inventory.foods_inventories.create!(quantity: 2, food: pineapple)
