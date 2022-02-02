@@ -15,10 +15,13 @@ class GeneralShoppingListController < ApplicationController
 
   def retrieve_missing_items
     id = current_user.id
-    sql = "select foods_inventories.quantity, foods_recipes.quantity, foods.name, foods.price, foods.measurement_unit from recipes join foods_recipes on foods_recipes.recipe_id = recipes.id left join foods on foods.id = foods_recipes.food_id join foods_inventories on foods_inventories.food_id = foods.id where recipes.user_id = #{id}"
+    sql = "select foods_inventories.quantity,
+          foods_recipes.quantity, foods.name,
+          foods.price, foods.measurement_unit from recipes join foods_recipes on foods_recipes.recipe_id = recipes.id
+          left join foods on foods.id = foods_recipes.food_id
+          join foods_inventories on foods_inventories.food_id = foods.id where recipes.user_id = #{id}"
     records_array = ActiveRecord::Base.connection.execute(sql)
 
-    p records_array.values.class
     list_items = records_array.values
 
     @missing_items = list_items.select do |list_item|
