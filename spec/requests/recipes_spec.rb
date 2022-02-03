@@ -1,4 +1,4 @@
-
+require 'rails_helper'
 
 describe 'Testing Recipes pages', type: :request do
   before(:each) do
