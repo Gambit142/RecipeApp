@@ -7,8 +7,7 @@ class RecipesController < ApplicationController
   def new; end
 
   def index
-    # @recipes = Recipe.where(user: current_user)
-    @recipes = current_user.recipes
+    @recipes = current_user.includes(:foods, :user).recipes
   end
 
   def show; end
@@ -20,7 +19,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @recipes = Recipe.includes(:user).where(public: true)
+    @recipes = Recipe.includes(:user, :foods).where(public: true)
   end
 
   def new_ingredient; end
