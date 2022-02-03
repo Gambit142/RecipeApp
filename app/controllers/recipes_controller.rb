@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource expect: :public_recipes
+  skip_before_action :authenticate_user!, only: :public_recipes
+
   def create; end
 
   def new; end
