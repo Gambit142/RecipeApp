@@ -57,6 +57,31 @@
   }
 }
 
+.recipes {
+  margin-top: 1rem;
+  margin-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipe-box {
+  border-radius: 0.4rem;
+  display: flex;
+  transition: unset;
+  border: unset;
+  padding: 1rem;
+  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    border: unset;
+  }
+}
+
 .flex {
   display: flex;
 }

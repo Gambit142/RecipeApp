@@ -22,6 +22,7 @@
 
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: whitesmoke;
 }
 
 a {
@@ -48,12 +49,19 @@ a:hover {
   height: 5rem;
 }
 
+button,
+input[type='submit'] {
+  border: none;
+}
+
 .button {
   background-color: tomato;
   border-radius: 0.2rem;
   color: whitesmoke;
   transition: background-color 80ms;
   width: fit-content;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
 }
 
 .button:hover {

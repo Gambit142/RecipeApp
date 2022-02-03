@@ -1,14 +1,14 @@
 <main>
-  <h1>Recipes</h1>
   <div class="recipes">
+    <h1>Recipes</h1>
     <% @recipes.each do |recipe| %>
-      <%= link_to recipe_url(recipe), class: 'recipe' do %>
+      <%= link_to recipe_url(recipe), class: 'recipe-box' do %>
         <div>
           <h3><%= recipe.name %></h3>
+          <%= button_to 'REMOVE', recipe_url(recipe), method: :delete, class: 'button' %>
         </div>
         <p><%= recipe.description %></p>
       <% end %>
-      <%= link_to 'REMOVE', recipe_url(recipe), method: :delete %>
     <% end %>
   </div>
 </main>
