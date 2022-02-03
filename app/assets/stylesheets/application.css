@@ -13,3 +13,91 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: whitesmoke;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+  position: relative;
+  transition: border 50ms;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  border-bottom: 2px solid tomato;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 10%);
+  height: 5rem;
+}
+
+.header .logged-in {
+  background-color: rgb(209, 209, 209);
+  border-radius: 0.6em;
+  padding: 0.2em 0.4em;
+  font-weight: bold;
+  color: rgb(32, 32, 32);
+  cursor: pointer;
+}
+
+button,
+input[type='submit'] {
+  border: none;
+}
+
+input[type='submit'],
+.button {
+  background-color: tomato;
+  border-radius: 0.2rem;
+  color: whitesmoke;
+  transition: background-color 80ms;
+  width: fit-content;
+  padding: 0.2em 0.4em;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: rgb(231, 80, 54);
+  border-radius: 0.2rem;
+  color: whitesmoke;
+}
+
+.sign {
+  margin-inline: 1rem;
+}
+
+.header .links {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.success,
+.notice {
+  margin: 0 auto;
+  display: block;
+  margin-block: 1rem;
+  background-color: rgba(255, 255, 0, 0.233);
+  border: 1px solid rgb(199, 199, 10);
+  padding: 0.4em;
+  border-radius: 0.4em;
+  width: fit-content;
+}
