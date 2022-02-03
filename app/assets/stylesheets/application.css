@@ -49,6 +49,15 @@ a:hover {
   height: 5rem;
 }
 
+.header .logged-in {
+  background-color: rgb(209, 209, 209);
+  border-radius: 0.6em;
+  padding: 0.2em 0.4em;
+  font-weight: bold;
+  color: rgb(32, 32, 32);
+  cursor: pointer;
+}
+
 button,
 input[type='submit'] {
   border: none;
