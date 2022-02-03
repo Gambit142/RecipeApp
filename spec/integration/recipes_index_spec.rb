@@ -17,18 +17,6 @@ describe 'Recipe Index Page', type: :feature do
       public: true
     )
 
-    # post = @mike.posts.create!(
-    #   title: 'Cats and Dogs', text: 'this is first post about cats and dogs!',
-    #   comments_counter: 0, likes_counter: 0
-    # )
-    # lucy = User.create!(
-    #   name: 'lucy', bio: 'this is my bio',
-    #   photo: 'test_image1', email: 'lucy@gmail.com',
-    #   password: 'lucylucy', confirmed_at: Time.now
-    # )
-    # lucy.comments.create!(text: 'really nice post Michael', post: post)
-    # lucy.comments.create!(text: 'Great', post: post)
-    # lucy.comments.create!(text: 'fantastic', post: post)
     visit recipes_path
   end
 
