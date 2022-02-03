@@ -42,5 +42,4 @@ describe 'Testing Recipes pages', type: :request do
       expect(response.body).to include('Generate shopping list')
     end
   end
-  
 end
