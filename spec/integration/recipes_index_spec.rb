@@ -30,7 +30,7 @@ describe 'Recipe Index Page', type: :feature do
     end
 
     it 'the REMOVE recipe button' do
-      expect(page).to have_link 'REMOVE'
+      expect(page).to have_button 'REMOVE'
     end
 
     it 'when I click on a recipe, it redirects me to that recipe\'s show page.' do

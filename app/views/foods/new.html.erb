@@ -7,7 +7,7 @@
 
   <div>
     <%= form.label :measurement_unit %><br>
-    <%= form.text_field :measurement_unit, size: "80x6" %>
+    <%= form.select :measurement_unit, %w[kg units l ml cl g] %>
   </div>
 
   <div>

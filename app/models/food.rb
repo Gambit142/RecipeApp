@@ -1,6 +1,6 @@
 class Food < ApplicationRecord
   belongs_to :user
-  has_many :ingredients
+  has_many :ingredients, dependent: :destroy
   has_many :foods_inventories
   has_many :recipes, through: :ingredients
   has_many :inventories, through: :foods_inventories

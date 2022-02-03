@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
-    @food.destroy
+    @food.destroy!
     flash[:success] = 'You deleted this food item'
     redirect_to foods_url
   end
