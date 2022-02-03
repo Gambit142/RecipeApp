@@ -28,11 +28,11 @@ RSpec.describe 'Foods Index Page Features', type: :feature do
     end
 
     it 'should see a link to delete a food item on the page' do
-      expect(page).to have_link('Delete')   
+      expect(page).to have_link('Delete')
     end
 
     it 'should see a link to add food item' do
-      expect(page).to have_link('Add Food')   
+      expect(page).to have_link('Add Food')
     end
 
     it 'When I click on add food link, it redirects me to a page fr adding a food item' do
