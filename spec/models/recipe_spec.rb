@@ -29,6 +29,12 @@ describe '', type: :model do
       expect(subject).to_not be_valid
     end
 
+    it 'tests a recipe name is less than 250 character' do
+      expect(subject).to be_valid
+      subject.name = 'a' * 251
+      expect(subject).to_not be_valid
+    end
+
     it 'test validation for description' do
       expect(subject).to be_valid
       subject.description = 'a' * 1001
