@@ -27,8 +27,46 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  background-color: gray;
-  padding: 0.2em;
+  padding: 0.2em 0.4em;
   cursor: pointer;
-  border-radius: 0.5em;
+  position: relative;
+  transition: border 50ms;
+  border-bottom: 2px solid transparent;
+}
+
+a:hover {
+  border-bottom: 2px solid tomato;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: whitesmoke;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 10%);
+  height: 5rem;
+}
+
+.button {
+  background-color: tomato;
+  border-radius: 0.2rem;
+  color: whitesmoke;
+  transition: background-color 80ms;
+  width: fit-content;
+}
+
+.button:hover {
+  background-color: rgb(231, 80, 54);
+  border-radius: 0.2rem;
+  color: whitesmoke;
+}
+
+.sign {
+  margin-inline: 1rem;
+}
+
+.header .links {
+  display: flex;
+  gap: 0.4rem;
 }

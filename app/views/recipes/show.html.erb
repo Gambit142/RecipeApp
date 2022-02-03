@@ -1,21 +1,21 @@
-<main>
+<main class="recipe-container">
   <h1><%= @recipe.name %></h1>
-  <section class="flex">
-    <div class="flex-column">
+  <section class="details">
+    <div>
       <p>Preparation time: <%= @recipe.preparation_time %> minutes </p>
       <p>Cooking time: <%= @recipe.cooking_time %> minutes </p>
       <p>Steps go here...</p>
-      <%= link_to 'Generate shopping list', shopping_list_url %>
+      <%= link_to 'Generate shopping list', shopping_list_url, class: 'button' %>
     </div>
-    <div class="flex-column">
+    <div>
       <div>
         <label for="public">Public</label>
         <input name="public" type="checkbox">
       </div>
-      <%= link_to 'Add ingredient', new_recipe_ingredient_url(@recipe) %>
+      <%= link_to 'Add ingredient', new_recipe_ingredient_url(@recipe), class: 'button' %>
     </div>
   </section>
-  <div class="ingredients">
+  <section class="ingredients">
     <table>
       <tr>
         <th>Food</th>
@@ -29,11 +29,11 @@
           <td><%= "#{ingredient.quantity} #{ingredient.food.measurement_unit}" %></td>
           <td>$<%= ingredient.food.price %></td>
           <td>
-            <%= link_to 'Modify', edit_ingredient_url(ingredient) %>
-            <%= link_to 'Remove', ingredient_url(ingredient), method: :delete %>
+            <%= link_to 'Modify', edit_ingredient_url(ingredient), class: 'button' %>
+            <%= link_to 'Remove', ingredient_url(ingredient), method: :delete, class: 'button' %>
           </td>
         </tr>
       <% end %>
     </table>
-  </div>
+  </section>
 </main>

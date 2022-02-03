@@ -6,6 +6,57 @@
   display: flex;
 }
 
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  // padding-inline: 1rem;
+  width: fit-content;
+  align-items: stretch;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  h1 {
+    text-align: center;
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      justify-content: space-between;
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .ingredients table {
+    margin-top: 2rem;
+    width: 50vw;
+    background-color: whitesmoke;
+    border-collapse: collapse;
+    border-spacing: 1px;
+
+    a {
+      display: inline-block;
+      width: fit-content;
+    }
+
+    th,
+    td {
+      border: 1px solid gray;
+      padding: 0.2em;
+      text-align: center;
+    }
+
+    td {
+      padding: 1rem;
+      box-sizing: content-box;
+    }
+  }
+}
+
 .flex {
   display: flex;
 }

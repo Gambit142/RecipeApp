@@ -1,6 +1,6 @@
 <div class="container">
   <% @recipes.each do |recipe| %>
-    <%= link_to recipe_url(recipe), class: 'recipe-container' do %>
+    <%= link_to recipe_url(recipe), class: 'public-recipe-container' do %>
       <div>
         <div>
           <h1><%= recipe.name%></h1>
