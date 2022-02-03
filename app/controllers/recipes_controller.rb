@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
   def new; end
 
   def index
-    @recipes = current_user.includes(:foods, :user).recipes
+    @recipes = current_user.recipes.includes(:foods)
   end
 
   def show; end

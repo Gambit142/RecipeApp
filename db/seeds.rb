@@ -10,7 +10,7 @@ chris = User.create!(name: 'chris', email: 'chris@test.com', password: 'chris123
 kate = User.create!(name: 'kate', email: 'kate@test.com', password: 'kate123')
 
 rice = chris.foods.create!(name: 'Rice', price: 1.5, measurement_unit: 'kg')
-apple = chris.foods.create!(name: 'Apple', price: 0.2, measurement_unit: 'grams')
+apple = chris.foods.create!(name: 'Apple', price: 0.2, measurement_unit: 'g')
 chicken_breasts = chris.foods.create!(name: 'Chicken breasts', price: 3.5, measurement_unit: 'units')
 
 recipe = chris.recipes.create!(name: 'Chicken Tandoori', preparation_time: 15, cooking_time: 50, description: 'Tandoori chicken is a chicken dish prepared by roasting chicken marinated in yogurt and spices in a tandoor, a cylindrical clay oven.', public: true)

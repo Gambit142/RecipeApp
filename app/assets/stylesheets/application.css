@@ -63,6 +63,7 @@ input[type='submit'] {
   border: none;
 }
 
+input[type='submit'],
 .button {
   background-color: tomato;
   border-radius: 0.2rem;
@@ -87,4 +88,16 @@ input[type='submit'] {
 .header .links {
   display: flex;
   gap: 0.4rem;
+}
+
+.success,
+.notice {
+  margin: 0 auto;
+  display: block;
+  margin-block: 1rem;
+  background-color: rgba(255, 255, 0, 0.233);
+  border: 1px solid rgb(199, 199, 10);
+  padding: 0.4em;
+  border-radius: 0.4em;
+  width: fit-content;
 }
